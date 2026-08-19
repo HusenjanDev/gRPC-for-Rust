@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package c2agent;
+
+service AgentService {
+    rpc ControlStream(stream AgentCommandResult) returns (stream AgentCommand);
+}
+
+message AgentCommand {
+    string id = 1;
+    string command = 2;
+}
+
+message AgentCommandResult {
+    string id = 1;
+    string stdout = 2;
+    string stderr = 3;
+    int32 exit_code = 4;
+}

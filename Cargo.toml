@@ -1,0 +1,24 @@
+[package]
+name = "C2Framework"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+futures = "0.3.34"
+prost = "0.14.4"
+tokio = {version = "1.53.1", features = ["full"] }
+tokio-stream = "0.1.19"
+tonic = "0.14.6"
+tonic-prost = "0.14.6"
+
+[[bin]]
+name = "server"
+path = "src/server.rs"
+
+[[bin]]
+name = "client" 
+path = "src/client.rs"
+
+[build-dependencies]
+tonic-build = "0.14.6"
+tonic-prost-build = "0.14.6"
